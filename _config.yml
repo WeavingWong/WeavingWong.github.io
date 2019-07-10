@@ -1,11 +1,11 @@
 # Basic
-title: Vno Jekyll
-subtitle: A blog-orientation theme for Jekyll
-welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
-description: Vno Jekyll is a port of my Ghost theme vno.
-creator: <a href="http://onev.cat">@onevcat</a>
+title: Weaving Wong
+subtitle: 总觉得该写点啥...
+welcome_message: 分享读书、学习、生活感悟
+description: 嗨，我是Weaving，一名机器学习爱好者.
+creator: <a href="https://WeavingWong.github.io">@Weaving</a>
 
-url: "http://vno.onevcat.com"
+url: "https://WeavingWong.github.io"
 
 permalink: /:year/:month/:title/
 
@@ -17,33 +17,33 @@ cover_color: red
 
 # The blog button should not be removed.
 blog_button:
-    title: Blog
-    description: Visit blog
+    title: 博客
+    description: 访问博客
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
+    - {title: 项目, description: 我的github主页, url: 'https://github.com/WeavingWong'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
 plugins: [jekyll-paginate]
-paginate: 10
+paginate: 20
 paginate_path: "page/:num/"
 
 # Comment
 comment:
-    disqus: vno-jekyll
+    disqus: WeavingWong
     # duoshuo: 
     
-# Social
 social:
-    weibo: onevcat
-    github: onevcat
-    twitter: onevcat
-    gplus: 107108267983477358170
-    mail: onev@onevcat.com
+    weibo: WeavingWong
+    github: WeavingWong
+    twitter: weaving_wong
+    # gplus: 107108267983477358170
+    mail: weaving.wong@gmail.com
 
 # Google Analytics
 ga:
-    # id: your_ga_id
-    # host: your_host
+    id: UA-143613699-1
+    host: https://WeavingWong.github.io
+
