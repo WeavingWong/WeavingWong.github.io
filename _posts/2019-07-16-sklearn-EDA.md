@@ -519,9 +519,11 @@ Standard deviation: 1576.20472269
 ```
 > 提示：你要保存每个试验过的模型，以便后续可以再用。要确保有超参数和训练参数，以及交叉验证评分，和实际的预测值。这可以让你比较不同类型模型的评分，还可以比较误差种类。你可以用 Python 的模块pickle，非常方便地保存 Scikit-Learn 模型，或使用sklearn.externals.joblib，后者序列化大 NumPy 数组更有效率：
 
-​```python
+```python
 from sklearn.externals import joblib
 joblib.dump(my_model, "my_model.pkl")
+
 #  然后
 my_model_loaded = joblib.load("my_model.pkl")
+
 ```
