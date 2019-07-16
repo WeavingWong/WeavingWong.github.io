@@ -386,7 +386,7 @@ full_pipeline = FeatureUnion(transformer_list=[
 
 
 
-# 你可以很简单地运行整个流水线：
+###  你可以很简单地运行整个流水线：
 ```python
 # 你可以很简单地运行整个流水线：
 >>> housing_prepared = full_pipeline.fit_transform(housing)
@@ -438,14 +438,16 @@ Labels:         [359400.0, 69700.0, 302100.0, 301300.0, 351900.0]
 >>> lin_rmse = np.sqrt(lin_mse)
 >>> lin_rmse
 68628.413493824875
-
+```
 
 均方根误差 很大，效果很差，尝试决策树：
 from sklearn.tree import DecisionTreeRegressor
 tree_reg = DecisionTreeRegressor()
 tree_reg.fit(housing_prepared, housing_labels)
 
-# 做预测与验证
+##  做预测与验证
+
+```python 
 >>> housing_predictions = tree_reg.predict(housing_prepared)
 >>> tree_mse = mean_squared_error(housing_labels, housing_predictions)
 >>> tree_rmse = np.sqrt(tree_mse)
@@ -453,14 +455,6 @@ tree_reg.fit(housing_prepared, housing_labels)
 0.0
 ```
 
-# 做预测与验证
-```python
-housing_predictions = tree_reg.predict(housing_prepared)
-tree_mse = mean_squared_error(housing_labels, housing_predictions)
-tree_rmse = np.sqrt(tree_mse)
-tree_rmse
-0.0
-```
 
 等一下，发生了什么？没有误差？这个模型可能是绝对完美的吗？当然，更大可能性是这个模型严重过拟合数据。如何确定呢？如前所述，直到你准备运行一个具备足够信心的模型，都不要碰测试集，因此你需要使用训练集的部分数据来做训练，用一部分来做模型验证。
 
@@ -478,7 +472,9 @@ scores = cross_val_score(tree_reg, housing_prepared, housing_labels,
                          scoring="neg_mean_squared_error", cv=10)
 rmse_scores = np.sqrt(-scores)
 
-# 警告：Scikit-Learn 交叉验证功能期望的是效用函数（越大越好）而不是损失函数（越低越好），因此得分函数实际上与 MSE 相反（即负值），这就是为什么前面的代码在计算平方根之前先计算-scores。
+# 警告：Scikit-Learn 交叉验证功能期望的是效用函数（越大越好）
+# 而不是损失函数（越低越好），因此得分函数实际上与 MSE 相反（即负值），
+# 这就是为什么前面的代码在计算平方根之前先计算-scores。
 
 
 >>> def display_scores(scores):
@@ -523,7 +519,7 @@ Standard deviation: 1576.20472269
 ```
 > 提示：你要保存每个试验过的模型，以便后续可以再用。要确保有超参数和训练参数，以及交叉验证评分，和实际的预测值。这可以让你比较不同类型模型的评分，还可以比较误差种类。你可以用 Python 的模块pickle，非常方便地保存 Scikit-Learn 模型，或使用sklearn.externals.joblib，后者序列化大 NumPy 数组更有效率：
 
-```python
+​```python
 from sklearn.externals import joblib
 joblib.dump(my_model, "my_model.pkl")
 #  然后
