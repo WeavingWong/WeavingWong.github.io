@@ -8,7 +8,13 @@ tags: 竞赛总结
 ###   “京东杯”2019第六届泰达创新创业挑战赛比赛攻略（完整版见github文档）
 
 - 方案开源地址：[季军方案](https://github.com/WeavingWong/JDATA_2019-Cate_Shop_predict)
+
 - 比赛链接：[“京东杯”2019第六届泰达创新创业挑战赛-用户对品类下店铺购买预测](https://jdata.jd.com/html/detail.html?id=8)
+
+- 比赛数据在此：[https://pan.baidu.com/s/1Lnda54VN6IuEYF9GMxAk3g](https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1Lnda54VN6IuEYF9GMxAk3g)
+
+  提取码：9ttp
+
 - 队伍名称： 优生801
 ### 赛题解读
 - 1、赛题背景
