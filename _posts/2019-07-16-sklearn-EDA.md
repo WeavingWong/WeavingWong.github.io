@@ -41,7 +41,9 @@ df.info()
 df.describe() # 展示了数值属性的概括
 ```
 
-![](/assets/images/EDA/desciribe.png)
+![](/assets/images/EDA/describe.png)
+
+
 
 **类别数据**
 
@@ -234,8 +236,12 @@ housing_labels = strat_train_set["median_house_value"].copy()
 大多机器学习算法不能处理缺失的特征，因此先创建一些函数来处理特征缺失的问题。前面，你应该注意到了属性total_bedrooms有一些缺失值。有三个解决选项：
 
 - 去掉对应的街区；
+
 - 去掉整个属性；
-- 进行赋值（0、平均值、中位数等等）。
+
+- 进行赋值（0、平均值、中位数等等）
+
+  
 ```python
 housing.dropna(subset=["total_bedrooms"])    #  选项1 去除部分
 housing.drop("total_bedrooms", axis=1)       #  选项2 去除整列
@@ -243,7 +249,11 @@ median = housing["total_bedrooms"].median()
 housing["total_bedrooms"].fillna(median)     #  选项3 进行填充
 ```
 
-方法二：Scikit-Learn 提供了一个方便的类来处理缺失值：Imputer。下面是其使用方法：首先，需要创建一个Imputer实例，指定用某属性的中位数来替换该属性所有的缺失值：
+
+
+**方法二**：
+
+Scikit-Learn 提供了一个方便的类来处理缺失值：Imputer。下面是其使用方法：首先，需要创建一个Imputer实例，指定用某属性的中位数来替换该属性所有的缺失值：
 
 ```python
 from sklearn.preprocessing import Imputer
@@ -444,11 +454,13 @@ tree_reg.fit(housing_prepared, housing_labels)
 ```
 
 # 做预测与验证
->>> housing_predictions = tree_reg.predict(housing_prepared)
->>> tree_mse = mean_squared_error(housing_labels, housing_predictions)
->>> tree_rmse = np.sqrt(tree_mse)
->>> tree_rmse
+```python
+housing_predictions = tree_reg.predict(housing_prepared)
+tree_mse = mean_squared_error(housing_labels, housing_predictions)
+tree_rmse = np.sqrt(tree_mse)
+tree_rmse
 0.0
+```
 
 等一下，发生了什么？没有误差？这个模型可能是绝对完美的吗？当然，更大可能性是这个模型严重过拟合数据。如何确定呢？如前所述，直到你准备运行一个具备足够信心的模型，都不要碰测试集，因此你需要使用训练集的部分数据来做训练，用一部分来做模型验证。
 
