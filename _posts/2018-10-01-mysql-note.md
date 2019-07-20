@@ -27,6 +27,7 @@ SHOW VARIABLES --
 ```
 
 -  数据库操作
+
 ```mysql
 - 数据库操作 
 -- 查看当前数据库
@@ -50,6 +51,7 @@ SHOW VARIABLES --
 ```
 
 - 表的操作
+
 ```mysql
 -- 创建表
     create [temporary] table[ if not exists] [库名.]表名 ( 表的结构定义 )[ 表选项]
@@ -130,6 +132,7 @@ SHOW VARIABLES --
 ```
 
 -  数据操作 
+
 ```mysql
 -- 增
     INSERT [INTO] 表名 [(字段列表)] VALUES (值列表)[, (值列表), ...]
@@ -150,6 +153,7 @@ SHOW VARIABLES --
 ```
 
 - 字符集编码
+
 ```mysql
 -- MySQL、数据库、表、字段均可设置编码
 -- 数据编码与客户端编码不需一致
@@ -171,6 +175,7 @@ SET NAMES GBK;    -- 相当于完成以上三个设置
 ```
 
 -  数据类型（列类型）
+
 ```mysql
 1. 数值类型
 -- a. 整型 ----------
@@ -281,6 +286,7 @@ set(val1, val2, val3...)
 ```
 
 -  选择类型 
+
 ```mysql
 -- PHP角度
 1. 功能满足
@@ -301,6 +307,7 @@ set(val1, val2, val3...)
 ```
 
 - 列属性（列约束）
+
 ```mysql
 1. 主键
     - 能唯一标识记录的字段，可以作为主键。
@@ -364,6 +371,7 @@ set(val1, val2, val3...)
 ```
 
 - 建表规范
+
 ```mysql
     -- Normal Format, NF
         - 每个表保存一个实体信息
@@ -381,6 +389,7 @@ set(val1, val2, val3...)
 ```
 
 -  select 
+
 ```mysql
 select [all|distinct] select_expr from -> where -> group by [合计函数] -> having -> order by -> limit
 
@@ -449,6 +458,7 @@ h. distinct, all 选项
 ```
 
 - UNION 
+
 ```mysql
     将多个select查询的结果组合成一个结果集合。
     SELECT ... UNION [ALL|DISTINCT] SELECT ...
@@ -460,6 +470,7 @@ h. distinct, all 选项
 ```
 
 - 子查询 
+
 ```mysql
     - 子查询需用括号包裹。
 -- from型
@@ -493,6 +504,7 @@ h. distinct, all 选项
 ```
 
 - 连接查询(join) 
+
 ```mysql
     将多个表的字段进行连接，可以指定连接条件。
 -- 内连接(inner join)
@@ -544,6 +556,7 @@ lines    控制行格式
 ```
 
 -  insert 
+
 ```mysql
 select语句获得的数据可以用insert插入。
 
@@ -566,6 +579,7 @@ select语句获得的数据可以用insert插入。
     insert into tbl_name values/set/select on duplicate key update 字段=值, …;
 ```
 -  delete 
+
 ```mysql
 DELETE FROM tbl_name [WHERE where_definition] [ORDER BY ...] [LIMIT row_count]
 
@@ -580,6 +594,7 @@ delete from 需要删除数据多表1，表2 using 表连接操作 条件。
 ```
 
 -  truncate 
+
 ```mysql
 TRUNCATE [TABLE] tbl_name
 清空数据
@@ -593,6 +608,7 @@ TRUNCATE [TABLE] tbl_name
 ```
 
 - 备份与还原 
+
 ```mysql
 备份，将数据的结构与表内数据保存起来。
 利用 mysqldump 指令完成。
@@ -617,6 +633,7 @@ TRUNCATE [TABLE] tbl_name
 ```
 
 - 视图 
+
 ```mysql
 什么是视图：
     视图是一个虚拟表，其内容由查询定义。同真实的表一样，视图包含一系列带有名称的列和行数据。但是，视图并不在数据库中以存储的数据值集形式存在。行和列数据来自由定义视图的查询所引用的表，并且在引用视图时动态生成。
@@ -656,6 +673,7 @@ CREATE [OR REPLACE] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] VIEW view_name
 ```
 
 - 事务(transaction) 
+
 ```mysql
 事务是指逻辑上的一组操作，组成这组操作的各个单元，要不全成功要不全失败。 
     - 支持连续SQL的集体成功或集体撤销。
@@ -721,6 +739,7 @@ MyISAM 支持表锁，InnoDB 支持行锁
 ```
 
 - 触发器 
+
 ```mysql
     触发程序是与表有关的命名数据库对象，当该表出现特定事件时，将激活该对象
     监听：记录的增加、修改、删除。
@@ -782,6 +801,7 @@ end
 ```
 
 - SQL编程 
+
 ```mysql
 --// 局部变量 ----------
 -- 变量声明
@@ -947,6 +967,7 @@ INOUT，表示混合型
 ```
 
 - 存储过程 
+
 ```mysql
 存储过程是一段可执行性代码的集合。相比函数，更偏向于业务逻辑。
 调用：CALL 过程名
@@ -968,6 +989,7 @@ END
 ```
 
 - 用户和权限管理 
+
 ```mysql
 用户信息表：mysql.user
 -- 刷新权限
@@ -1040,6 +1062,7 @@ GRANT OPTION    -- 允许授予权限
 ```
 
 - 表维护 
+
 ```mysql
 -- 分析和存储表的关键字分布
 ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE 表名 ...
@@ -1051,6 +1074,7 @@ OPTIMIZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...
 ```
 
 - 杂项 
+
 ```mysql
 1. 可用反引号（`）为标识符（库名、表名、字段名、索引、别名）包裹，以避免与关键字重名！中文也可以作为标识符！
 2. 每个库目录存在一个保存当前数据库的选项文件db.opt。
