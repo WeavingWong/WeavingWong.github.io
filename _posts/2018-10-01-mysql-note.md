@@ -532,7 +532,9 @@ h. distinct, all 选项
 
 select info.id, info.name, info.stu_num, extra_info.hobby, extra_info.sex from info, extra_info where info.stu_num = extra_info.stu_id;
 ```
+
 - 导入导出 
+
 ```mysql
 select * into outfile 文件地址 [控制格式] from 表名;    -- 导出表数据
 load data [local] infile 文件地址 [replace|ignore] into table 表名 [控制格式];    -- 导入数据
@@ -1093,4 +1095,7 @@ OPTIMIZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...
 ```
 ###  参考
 链接：https://shockerli.net/post/1000-line-mysql-note/
+
+
+
 (本文版权归原作者所有。转载文章仅为学习之目的，如有侵权请与我联系，我将及时处理。)
