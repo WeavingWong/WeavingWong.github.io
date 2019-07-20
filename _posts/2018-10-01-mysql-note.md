@@ -126,9 +126,7 @@ SHOW VARIABLES --
 -- 分析表
     ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...
 ```
-
-
-- 数据操作 
+-  数据操作 
 ```mysql
 -- 增
     INSERT [INTO] 表名 [(字段列表)] VALUES (值列表)[, (值列表), ...]
@@ -168,6 +166,7 @@ SET NAMES GBK;    -- 相当于完成以上三个设置
     charset 字符集编码        设置字符集编码
     collate 校对集编码        设置校对集编码
 ```
+
 -  数据类型（列类型）
 ```mysql
 1. 数值类型
@@ -277,6 +276,7 @@ set(val1, val2, val3...)
     最多可以有64个不同的成员。以bigint存储，共8个字节。采取位运算的形式。
     当创建表时，SET成员值的尾部空格将自动被删除。
 ```
+
 -  选择类型 
 ```mysql
 -- PHP角度
@@ -296,8 +296,6 @@ set(val1, val2, val3...)
         INET_ATON('127.0.0.1') 将IP转为整型
         INET_NTOA(2130706433) 将整型转为IP
 ```
-
-
 
 - 列属性（列约束）
 ```mysql
@@ -362,8 +360,6 @@ set(val1, val2, val3...)
     注意，外键只被InnoDB存储引擎所支持。其他引擎是不支持的。
 ```
 
-
-
 - 建表规范
 ```mysql
     -- Normal Format, NF
@@ -382,7 +378,6 @@ set(val1, val2, val3...)
 ```
 
 -  select 
-
 ```mysql
 select [all|distinct] select_expr from -> where -> group by [合计函数] -> having -> order by -> limit
 
@@ -544,6 +539,7 @@ lines    控制行格式
 默认：lines terminated by '\n'
     terminated by 'string'    -- 终止
 ```
+
 -  insert 
 ```mysql
 select语句获得的数据可以用insert插入。
@@ -579,6 +575,7 @@ DELETE FROM tbl_name [WHERE where_definition] [ORDER BY ...] [LIMIT row_count]
 支持多表删除，使用类似连接语法。
 delete from 需要删除数据多表1，表2 using 表连接操作 条件。
 ```
+
 -  truncate 
 ```mysql
 TRUNCATE [TABLE] tbl_name
@@ -654,7 +651,6 @@ CREATE [OR REPLACE] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] VIEW view_name
         将视图执行完毕后，形成临时表，再做外层查询！
     UNDEFINED    未定义(默认)，指的是MySQL自主去选择相应的算法。
 ```
-
 
 - 事务(transaction) 
 ```mysql
