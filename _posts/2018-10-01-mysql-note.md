@@ -8,6 +8,7 @@ tags: 数据库
 学习之余，感叹互联网人的分享精神，数据库是互联网人的技术基础，在实践之余，能够总结自己学习笔记，在偶尔遗忘的时候做工具书一般检索，那真是极好的了。以下笔记整理自互联网。
 
 - mysql 服务
+
 ```mysql
 - 启动MySQL */
 net start mysql
@@ -24,6 +25,7 @@ update mysql.user set password=password('root');
 SHOW PROCESSLIST -- 显示哪些线程正在运行
 SHOW VARIABLES -- 
 ```
+
 -  数据库操作
 ```mysql
 - 数据库操作 
@@ -46,8 +48,8 @@ SHOW VARIABLES --
     drop database[ if exists] 数据库名
         同时删除该数据库相关的目录及其目录内容
 ```
-- 表的操作
 
+- 表的操作
 ```mysql
 -- 创建表
     create [temporary] table[ if not exists] [库名.]表名 ( 表的结构定义 )[ 表选项]
@@ -126,6 +128,7 @@ SHOW VARIABLES --
 -- 分析表
     ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...
 ```
+
 -  数据操作 
 ```mysql
 -- 增
