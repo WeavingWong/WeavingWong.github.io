@@ -59,6 +59,7 @@ tags: 年龄段预测
 -  user_basic_info：缺失情况如下图1，使用**众数**进行填充处理。
 
 ![img](/assets/images/DigiX/wps1.jpg) 
+
 <center>图 1 user_basic_info 缺失情况</center>
 
 -  user_app_usage：**样本缺失严重**，训练+测试总样本数2512500，user_app_usage表中缺失519833个样本的APP使用情况，**缺失比例达20%**. 我们有两个解决方案，
@@ -72,6 +73,7 @@ tags: 年龄段预测
 训练集和测试集情况，为了保证测试集能够与训练集同分布，故进行了统计：
 
 <center>表 1  训练样本标签分布</center>
+
 | 表        | 行数    | 列数 | 年龄分布                                                     |
 | --------- | ------- | ---- | ------------------------------------------------------------ |
 | age_train | 2010000 | 2    | 1     60000 2    400000 3    600000 4    500000 5    300000 6    150000 |
@@ -80,6 +82,7 @@ tags: 年龄段预测
 经线上测试，我们发现：**测试集标签分布与训练集一致！**即需预测的数据分布如下图2：
 
 ![img](/assets/images/DigiX/wps2.jpg) 
+
 <center>图 2  训练集-测试集标签分布一致</center>
 
 ### **（3）****数据预处理**
@@ -93,6 +96,7 @@ tags: 年龄段预测
 基础特征的预处理方法见下表2，不同的算法模型可能对应不同处理方案，若处理是category，则意味着使用的模型算法（若可以）直接指定类别特征，“+Rank”即保持原有数据的同时加入排序特征,“OrdinalEncoder”即将字符串型类别特征进行顺序编码，然后可以通过树模型直接指定类别特征或作为数值型直接参与训练（测试发现两种处理对树模型来说差别不大，可以作为模型融合方案分别尝试）。
 
 <center>表 2  基础特征预处理</center>
+
 | 表                               | 字段                  | 类型  | 数值类型                | 预处理               |
 | -------------------------------- | --------------------- | ----- | ----------------------- | -------------------- |
 | user_basic_info                  | 性别（gender）        | 类别  | int8                    | One-hot或category    |
@@ -134,11 +138,13 @@ tags: 年龄段预测
 ## **（4）数据单变量分析**
 
 ![img](/assets/images/DigiX/wps3.jpg) 
+
 <center>图 3  App 类型分布图</center>
 
 从数据分布的可视化情况可以看出，用户使用的App类型情况大致服从正态分布，只有少部分类型之间存在着表意重复的脏数据，经过数据清洗和数据规整，参考“[华为手机应用市场](https://appstore.huawei.com/soft/list)”分类方法（如下图4），我们将所有的App类型归纳为23类，从而将数据的长尾分布的影响降低。
 
 ![img](/assets/images/DigiX/wps4.jpg) 
+
 <center>图 4  华为应用市场分类方法</center>
 
 
@@ -161,6 +167,7 @@ tags: 年龄段预测
 | ![img](/assets/images/DigiX/wps5.jpg) | ![img](/assets/images/DigiX/wps6.jpg)  |
 | ![img](/assets/images/DigiX/wps7.jpg) | ![img](/assets/images/DigiX/wps8.jpg)  |
 | ![img](/assets/images/DigiX/wps9.jpg) | ![img](/assets/images/DigiX/wps10.jpg) |
+
 <center>图 5  数据分布单变量统计</center>
 
 
@@ -174,17 +181,23 @@ tags: 年龄段预测
 
 ![img](/assets/images/DigiX/wps11.jpg) 
 ![img](/assets/images/DigiX/wps12.jpg) 
+
 <center>图 6  RAM和ROM的剩余情况</center>
+
 
 - 用户开机时间：大部分用户在一个月范围内没有一次开机，但是我们也可以通过数据发现有相当部分的用户保持着一定的开关机的周期习惯，其中在7次左右是另一个小高峰，除去0次开机用户，其他为一个较为标准的正态分布，如图7。
 
 - 用户行为表中，除了用户开机时间存在比较明显的分布差异，其余的行为基本都呈现比较集中的长尾分布情况，如下图8，使用次数都集中分布在0处，其余选项的样本数量极少。
 
 ![img](/assets/images/DigiX/wps13.jpg) 
+
 <center>图 7  用户开机次数</center>
 
+
 ![img](/assets/images/DigiX/wps14.jpg) 
+
 <center>图 8  其余用户行为数据-长尾分布</center>
+
 
 ### **（4）特征变量&标签关系分析**
 
@@ -195,7 +208,9 @@ tags: 年龄段预测
 - 手机颜色对于用户的选择往往是一个比较大的影响因素，下图9 列出颜色与训练集年龄组之间的对比分析，可以看到，在不同的年龄组中，不同颜色的分布比例旺旺会存在一些细微差别，**得到不同年龄组选择不同颜色手机的先验概率**。具体我们可以定量分析并定位对应的年龄组与用户群。
 
 ![img](/assets/images/DigiX/wps15.jpg) 
+
 <center>图 9  年龄组与手机颜色的对比</center>
+
 
 - 除此之外，**手机品牌，字体，系统，RAM，ROM，城市**等信息，我们都可以通过与年龄组的关联，分析出相应年龄组中用户属性和行为的先验概率。另外，以上不同特征之间的**组合**可以唯一定位到一个用户使用的是哪一款**具体配置的手机**，从而精准的将人群进行细分。
 
@@ -322,6 +337,7 @@ tags: 年龄段预测
 ![img](/assets/images/DigiX/wps16.jpg) 
 <center>图 10  RNN模型一示意图</center>
 
+
 ![img](/assets/images/DigiX/wps17.jpg) 
 <center>图 11  RNN模型二示意图</center>
 
@@ -343,7 +359,9 @@ tags: 年龄段预测
 此处我们将第一层使用5个NN模型和4个LGB处理不同特征生成9个stack概率结果, 再使用LightGBM做Stacking第二层的训练。
 
 ![img](/assets/images/DigiX/wps19.jpg) 
+
 <center>图 13  Stacking模型融合</center>
+
 
 **Bagging**
 
