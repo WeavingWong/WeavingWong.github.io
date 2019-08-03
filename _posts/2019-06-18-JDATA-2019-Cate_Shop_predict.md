@@ -118,18 +118,14 @@ tags: 竞赛总结
 
 ![img](/assets/images/Jdata/wps8.jpg) 
 
+<center> 图1 浏览数据 </center>
 
-<center>图1 浏览数据<!center>
-
-
-**购买数据：**购买数据也是受春节的影响，过年前后数据波动很大，3月之后购买趋于平稳，只有3月28号购买数量略有异常，较平常多一些。
-
-
+购买数据：购买数据也是受春节的影响，过年前后数据波动很大，3月之后购买趋于平稳，只有3月28号购买数量略有异常，较平常多一些
 
 ![img](/assets/images/Jdata/wps9.jpg) 
 
 
-<center>图2 购买数据<!center>
+<center>图2 购买数据</center>
 
 **收藏、评论数据：**除去春节的影响，整体数据较为平稳。
 
@@ -137,29 +133,29 @@ tags: 竞赛总结
 ![img](/assets/images/Jdata/wps10.jpg) 
 
 
-<center>图3 收藏数据<!center>
+<center>图3 收藏数据</center>
 
 ![img](/assets/images/Jdata/wps11.jpg) 
 
-<center>图4 评论数据<!center>
+<center>图4 评论数据</center>
 
 **加购的数据：**存在严重缺失，两个半月只有4.08-4.15才有加购数据
 
 ![img](/assets/images/Jdata/wps12.jpg) 
 
-<center>图5 加购数据<!center>
+<center>图5 加购数据</center>
 
 **用户购买的时间周期：** 通过分析用户购买的时间间隔（天），可以发现大部分用户购买的时间间隔都在20天以内。
 
 ![img](/assets/images/Jdata/wps13.jpg) 
 
-<center>图6 平均购买时间间隔<!center>
+<center>图6 平均购买时间间隔</center>
 
 **用户点击购买平均时差：** 通过分析用户点击购买平均时差（天），可以发现大部分用户第一次点击到购买的时差在十天以内。
 
 ![img](/assets/images/Jdata/wps14.jpg) 
 
-<center>图7 点击购买平均时差<!center>
+<center>图7 点击购买平均时差</center>
 
 ## **2、数据预处理**
 
@@ -175,7 +171,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ![img](/assets/images/Jdata/wps15.jpg) 
 
-<center>图8 时间分箱<!center>
+<center>图8 时间分箱</center>
 
 另为方便后续特征工程中时间滑窗工作，故将用户操作时间字段action_time转换成精确到天的Date类型。
 
@@ -205,7 +201,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 
 
-<center>表 1<!center>
+<center>表 1</center>
 
 | 特征名称                                    | 所属类别 | 特征含义                        | 特征作用                                                     | 特征数量 |
 | ------------------------------------------- | -------- | ------------------------------- | ------------------------------------------------------------ | -------- |
@@ -218,7 +214,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ### **3.2基于品类的特征**
 
-<center>表 2<!center>
+<center>表 2</center>
 
 | 特征名称          | 所属类别 | 特征含义                                                     | 特征作用                       | 特征数量 |
 | ----------------- | -------- | ------------------------------------------------------------ | ------------------------------ | -------- |
@@ -234,7 +230,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ### **3.3基于店铺的特征**
 
-<center>表 3<!center>
+<center>表 3</center>
 
 | 特征名称          | 所属类别 | 特征含义                                                     | 特征作用                       | 特征数量 |
 | ----------------- | -------- | ------------------------------------------------------------ | ------------------------------ | -------- |
@@ -250,7 +246,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ### **3.4基于用户与品类的组合特征**
 
-<center>表 4<!center>
+<center>表 4</center>
 
 | 特征名称                  | 所属类别 | 特征含义                                                   | 特征作用                           | 特征数量 |
 | ------------------------- | -------- | ---------------------------------------------------------- | ---------------------------------- | -------- |
@@ -264,7 +260,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ### **3.5基于用户与店铺的组合特征**
 
-<center>表 5<!center>
+<center>表 5</center>
 
 | 特征名称                  | 所属类别 | 特征含义                                                   | 特征作用                             | 特征数量 |
 | ------------------------- | -------- | ---------------------------------------------------------- | ------------------------------------ | -------- |
@@ -278,7 +274,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ### **3.6基于品类与店铺的组合特征**
 
-<center>表 6<!center>
+<center>表 6</center>
 
 | 特征名称        | 所属类别 | 特征含义                                                   | 特征作用                                   | 特征数量 |
 | --------------- | -------- | ---------------------------------------------------------- | ------------------------------------------ | -------- |
@@ -293,7 +289,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ### **3.7基于用户与品类-店铺的组合特征**
 
-<center>表 7<!center>
+<center>表 7</center>
 
 | 特征名称                   | 所属类别 | 特征含义                                                     | 特征作用                                  | 特征数量 |
 | -------------------------- | -------- | ------------------------------------------------------------ | ----------------------------------------- | -------- |
@@ -314,7 +310,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ![img](/assets/images/Jdata/wps16.jpg) 
 
-<center>图9 特征重要性<!center>
+<center>图9 特征重要性</center>
 
 ## **4、算法建模**
 
@@ -328,7 +324,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ![img](/assets/images/Jdata/wps17.jpg) 
 
-<center>图10 候选集构建<!center>
+<center>图10 候选集构建</center>
 
 ### **4.2 模型选择**
 
@@ -358,7 +354,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ![img](/assets/images/Jdata/wps18.jpg) 
 
-<center>图11 方案一算法框架<!center>
+<center>图11 方案一算法框架</center>
 
 **1.2** **线下验证方案算法框架**
 
@@ -368,7 +364,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ![img](/assets/images/Jdata/wps19.jpg) 
 
-<center>图12 候选集构建<!center>
+<center>图12 候选集构建</center>
 
 
 
@@ -378,7 +374,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 ![img](/assets/images/Jdata/wps20.jpg) 
 
-<center>图13 最终方案算法框图<!center>
+<center>图13 最终方案算法框图</center>
 
 ## **2、模型性能**
 
@@ -386,7 +382,7 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
 
 由于每次成绩的显著提升，基本上都是在找到新的强特之后，若以分数作为参考系，提升进程大概如下：
 
-<center>表8<!center>
+<center>表8</center>
 
 | 版本 | 线上分数 | 改进说明                                                     |
 | ---- | -------- | ------------------------------------------------------------ |
