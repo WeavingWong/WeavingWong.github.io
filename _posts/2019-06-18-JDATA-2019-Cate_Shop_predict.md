@@ -46,7 +46,7 @@ tags: 竞赛总结
 
 其中：Precision为准确率，Recall为召回率； F11 是label=1或0的F1值，F12 是pred=1或0的F1值。
 
-## **5、**赛题****难点
+## **5、**赛题难点
 
 本次比赛分为A，B榜，但是两个榜都是采用同一套数据集。通过EDA分析可知，数据集存在很多噪声，例如加购数据存在大量缺失，浏览数据也存在两天的缺失，2月份数据受春节影响流量异常。如何建模尽可能达到最大的预测准确性。我们将本次比赛的难点归纳为如下几点。
 
@@ -90,7 +90,7 @@ tags: 竞赛总结
 
 ### **1.2 单变量分析**
 
-**浏览数据：**2月份的数据由于处于春节期间，数据波动较大，3.27-3.28两日浏览数据存在大量缺失（不适宜做训练集），其余日期的浏览数量较为平稳。
+**浏览数据：** 2月份的数据由于处于春节期间，数据波动较大，3.27-3.28两日浏览数据存在大量缺失（不适宜做训练集），其余日期的浏览数量较为平稳。
 
 ![img](/assets/images/Jdata/wps8.jpg) 
 
@@ -103,10 +103,6 @@ tags: 竞赛总结
 <center>图2 购买数据<!center>
 
 **收藏、评论数据：**除去春节的影响，整体数据较为平稳。
-
- 
-
- 
 
 ![img](/assets/images/Jdata/wps10.jpg) 
 
@@ -136,7 +132,7 @@ tags: 竞赛总结
 
 ## **2、数据预处理**
 
-### **2.1****处理** [**Missing Data**](https://en.wikipedia.org/wiki/Missing_data) 
+### **2.1**处理 [**Missing Data**](https://en.wikipedia.org/wiki/Missing_data) 
 
 jdata_user用户信息表中的age采用中位数，sex，city_level，province，city，county，shop_reg_tm，jdata_shop.cate等采用众数进行填充。
 
@@ -175,6 +171,8 @@ jdata_user用户信息表中的age采用中位数，sex，city_level，province�
  
 
 ### **3.1基于用户的特征**
+
+
 
 <center>表 1<!center>
 
