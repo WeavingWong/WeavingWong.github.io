@@ -1,6 +1,5 @@
 
 
-```python
 ---
 
 layout: post
@@ -14,7 +13,7 @@ categories: 秋招
 tags: python
 
 ---
-```
+
 
 
 ```python
@@ -55,7 +54,7 @@ print(getvaluesofn(N))
     100000
     第100000项
     447
-    
+
 
 
 ```python
